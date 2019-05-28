@@ -1,0 +1,29 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Centro Salud Villa Tunari</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/jumbotron/">
+
+    {% include "head_css.html" %}
+
+  </head>
+  <body>
+        {% include "barranav.html" %}
+        <main role="main">
+    {% block content %}
+
+    {% endblock %}
+        </main>
+    {% block footer %}
+        <footer >
+            <p>&copy; Company 2017-2019</p>
+        </footer>
+    {% endblock %}
+  </body>
+</html>

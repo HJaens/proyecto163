@@ -1,0 +1,18 @@
+{% extends 'base0.html' %}
+
+
+{% block content %}
+<div class="container">
+    <h4 align="CENTER">AGREGAR HISTORIAL</h4>
+
+    <form method="POST">
+    {% csrf_token %}
+    <h3>¿Desea eliminar el registro de {{ paciente.nombre }}?</h3>
+
+
+    <button class="btn btn-primary"  type="submit">Si, Eliminar</button>
+    <a class="btn btn-default" href="{% url 'paciente:listar_paciente'%}">Cancelar</a>
+    </form>
+
+</div>
+{% endblock %}

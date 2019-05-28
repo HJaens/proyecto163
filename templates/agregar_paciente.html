@@ -1,0 +1,15 @@
+{% extends "base0.html" %}
+{% block content %}
+<div class="container">
+    <h4 align="CENTER">AGREGAR PACIENTE</h4>
+
+    <form method="POST" action=""  cenctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+ <p> ingresar foto {{ form.foto }}</p>
+
+    <button type="submit">Guardar</button>
+    </form>
+
+</div>
+{% endblock %}

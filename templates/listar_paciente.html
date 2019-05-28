@@ -1,0 +1,45 @@
+{% extends 'base0.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+<h1 align="center"> LISTA DE PACIENTES</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>FOTO</td>
+            <td>CI</td>
+            <td>NOMBRE</td>
+            <td>APELLIDO</td>
+            <td>FECHA NACIMIENTO</td>
+            <td>EMAIL</td>
+            <td>TELEFONO</td>
+            <td>ACCIONES</td>
+            <td>CODIGO QR</td>
+        </tr>
+    </thead>
+    <tbody>
+         {% if pacientes %}
+         {% for paciente in pacientes %}
+            <tr>
+                <td> <img src="{{ paciente.foto.url }}" style="width: 100px"></td>
+                <td>{{ paciente.ci }}</td>
+                <td>{{paciente.first_name}}</td>
+                <td>{{paciente.last_name}}</td>
+                <td>{{paciente.fecha_naci}}</td>
+                <td>{{paciente.email}}</td>
+                <td>{{paciente.telefono}}</td>
+                <td>
+                    <a class="btn btn-primary" href="{% url 'paciente:editar_paciente' paciente.ci%}">Editar</a>
+                     <a class="btn btn-primary" href="{% url 'paciente:eliminar_paciente' paciente.ci%}">Eliminar</a>
+                </td>
+                <td>  <img src="{{ paciente.codigoqr.url }}" style="width: 100px"></td>
+            </tr>
+         {% endfor %}
+    {% else %}
+        <h1 align="center"> NO HAY PACIENTES</h1>
+    {% endif %}
+
+    </tbody>
+</table>
+</div>
+{% endblock %}

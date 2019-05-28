@@ -1,0 +1,106 @@
+<!--heredamos de base0 -->
+{% extends "base0.html" %}
+{% load static %}
+
+<!-- modificamos el bloque -->
+{% block content %}
+  <div class="jumbotron" style="background-image:url("{% static 'img/centro.jpg'%}")>
+    <div class="container">
+      <h1 class="display-3">Centro Salud Villa Tunari</h1>
+      <p>El Centro de Salud Villa Tunari del Distrito 4, perteneciente a la Red Lotes y Servicios</p>
+      <p><a class="btn btn-primary btn-lg" href="#" role="button">Leer mas &raquo;</a></p>
+    </div>
+    <div class="container">
+        <img class="img-responsive" src="{% static 'img/centro.jpg' %}" style="height: 300px; width: 1050px">
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+
+        <div class='col-sm-4 col-xs-12 pull-right'>
+	    	<p class='text-aline-center'><h2>Bienvenido</h2></p>
+
+            {% block login %}
+            <div class="login">
+                <form method="post" >
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            <div class="form-group">
+                                <label for="username">Nombre de Usuario:</label>
+                                <input class="form-control" type="text" name="username">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            <div class="form-group">
+                                <label for="username">Contraseña: </label>
+                                <input class="form-control" type="password" name="password">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            <div class="form-group">
+                                <a href="#">Olvidé mi contraseña</a>
+                                <input class="btn btn-primary" type="submit" value="Ingresar">
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+                </div>
+                {% endblock %}
+
+        </div>
+      <div class="col-md-4">
+
+
+
+        <h2>Informacion</h2>
+        <img class="img-responsive" src="{% static 'img/centro1.jpg' %}" style="width: 300px">
+        <p>Centro de Salud de Villa Tunari recibe donación de equipos para prevenir el cáncer de cuello uterino. </p>
+        <p><a class="btn btn-secondary" href="http://amibolivia.com/AMI/?p=6149" role="button">Leer mas &raquo;</a></p>
+      </div>
+
+    <div class="col-md-4">
+        <h2>Centro de Salud </h2>
+        <img class="img-responsive" src="{% static 'img/exterior.jpg' %}" style="width: 300px">
+        <p>parte exterior del centor de salud</p>
+        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      </div>
+
+
+    </div>
+
+    <div class="row">
+    <div class="col-md-4">
+        <h2>Ambientes</h2>
+        <img class="img-responsive" src="{% static 'img/centro2.jpg' %}" style="width: 300px">
+        <p>el centro de salud cuenta con diferentes Ambientes</p>
+        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      </div>
+
+  <div class="col-md-4">
+        <h2>Ambientes</h2>
+        <img class="img-responsive" src="{% static 'img/centro3.jpg' %}" style="width: 300px">
+        <p>el centro de salud cuenta con diferentes Ambientes</p>
+        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      </div>
+
+   <div class="col-md-4">
+        <h2>Aviso</h2>
+        <img class="img-responsive" src="{% static 'img/aviso.jpg' %}" style="width: 300px">
+        <p> el centro de salud informa </p>
+        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      </div>
+    </div>
+    <hr>
+
+  </div> <!-- /container -->
+{% endblock %}

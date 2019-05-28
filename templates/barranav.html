@@ -1,0 +1,31 @@
+ <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="{% url 'login' %}">Inicio</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'medico:listar_medico' %}">Personal Medico <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://www.miregion.org/BO/La-Paz/Provincia-Murillo/Municipio-El-Alto/Spots/Centro-De-Salud-Villa-Tunari/">Ubicacion</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Contacto</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="{% url 'logout' %}" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SALIR</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <ul class="dropdown-menu" role="menu">
+                <li><a class="dropdown-item" href="{% url 'logout' %}">salir</a></li>
+            </ul>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+    </form>
+  </div>
+</nav>

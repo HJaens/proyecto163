@@ -1,0 +1,36 @@
+{% extends 'base0.html' %}
+{% block content %}
+<div class="container">
+<h1 align="center"> LISTA DE MEDICOS</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>FOTO</td>
+            <td>ID</td>
+            <td>NOMBRE</td>
+            <td>APELLIDOS</td>
+            <td>AREA</td>
+            <td>ESPECIALIDAD</td>
+            <td>EMAIL</td>
+        </tr>
+    </thead>
+    <tbody>
+         {% if medicos %}
+         {% for medico in medicos %}
+            <tr>
+                <td><img src="{{ medico.foto.utl }}" style="width: 100px">  </td>
+                <td>{{ medico.id_medico }}</td>
+                <td>{{medico.first_name}}</td>
+                <td>{{medico.last_name}}</td>
+                <td>{{medico.area}}</td>
+                <td>{{medico.especialidad}}</td>
+                <td>{{medico.email}}</td>
+            </tr>
+         {% endfor %}
+    {% else %}
+        <h1 align="center"> NO HAY MEDICOS REGISTRADOS</h1>
+    {% endif %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

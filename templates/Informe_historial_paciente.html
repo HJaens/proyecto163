@@ -1,0 +1,57 @@
+{% load static %}
+<html>
+<head>
+	<title>Informe</title>
+	  <link rel="stylesheet" type="text/css" href={% static 'css/estilos.css' %}>
+</head>
+<body>
+
+	<div class="contenedor">
+		<div class="principal">
+{% if paciente %}
+        {% for paciente in paciente %}
+			<div class="nombre">
+				<p><h2>HISTORIAL DEL PACIENTE<h2></p>
+				<p><h2>{{ paciente.first_name }} {{ paciente.last_name }} </h1></p>
+
+			</div>
+			<div class="header">
+				<div class="row1" >
+					<div class="esp">
+						<img src="{{ paciente.foto.url }}" height=150px>
+					</div>
+
+					<div class="esp">
+						<p><b>CI:</b>{{ paciente.ci}}</p>
+						<p><b>Fecha Nacimiento:</b>{{paciente.fecha_naci}}</p>
+						<p><b>Email:</b>{{paciente.email}}</p>
+						<p><b>telefono:</b>{{ paciente.telefono}}</p>
+					</div>
+				</div>
+			</div>
+        {% endfor %}
+{% endif %}
+		</div>
+        {% if historiales %}
+		{% for historial in historiales %}
+		<div class="cuerpo">
+				<div class="contenido">
+					<h2 class="titulo">Nro Historial: {{historial.nrohistoria}}</h2>
+					<p><b><h3>Medico:</h3></b>      Dr.{{historial.medico.first_name}} {{historial.medico.last_name}}</p>
+					<p><b>Fecha y Hora:</b>{{historial.hora}}</p>
+					<p><b>Caracteristicas:</b></p>
+					<p>{{historial.caracteristica}}</p>
+					<p><b>Diagnostico:</b> {{historial.diagnostico}}</p>
+					<p><b>Receta Medica :</b>{{historial.receta}}</p>
+				</div>
+		</div>
+		{% endfor %}
+		{% else %}
+        	<h1 align="center"> NO HAY REGISTROS</h1>
+    	{% endif %}
+	</div>
+
+
+
+</body>
+</html>

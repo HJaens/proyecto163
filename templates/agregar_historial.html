@@ -1,0 +1,16 @@
+{% extends 'base0.html' %}
+
+
+{% block content %}
+<div class="container">
+    <h4 align="CENTER">AGREGAR HISTORIAL</h4>
+
+    <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit">Guardar</button>
+    </form>
+
+</div>
+{% endblock %}

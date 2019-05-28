@@ -1,0 +1,38 @@
+{% extends 'base0.html' %}
+
+{% block content %}
+<div class="container">
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>nroHistoria</td>
+            <td>paciente</td>
+            <td>medico</td>
+            <td>fecha y hora</td>
+            <td>caracteristica</td>
+            <td>diagnostico</td>
+            <td>receta</td>
+        </tr>
+    </thead>
+    <tbody>
+         {% if historiales %}
+         {% for historial in historiales %}
+            <tr>
+                <td>{{ historial.nrohistoria }}</td>
+                <td>{{historial.paciente.ci}}</td>
+                <td>{{historial.medico.first_name}}</td>
+                <td>{{historial.hora}}</td>
+                <td>{{historial.caracteristica}}</td>
+                <td>{{historial.diagnostico}}</td>
+                <td>{{historial.receta}}</td>
+            </tr>
+         {% endfor %}
+    {% else %}
+        <h1 align="center"> NO HAY REGISTROS</h1>
+    {% endif %}
+    </tbody>
+</table>
+</div>
+
+
+{% endblock %}
